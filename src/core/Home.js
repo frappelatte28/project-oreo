@@ -3,6 +3,7 @@ import Layout from './Layout';
 import { getProducts } from './apiCore';
 import Card from './Card';
 import Search from './Search';
+import Footer from './footer';
 
 const Home = () => {
     const [productsBySell, setProductsBySell] = useState([]);
@@ -36,11 +37,13 @@ const Home = () => {
     }, []);
 
     return (
+        
         <Layout
             title="RK INDUSTRIES"
             description="we sell rubber products"
             className="container-fluid"
         >
+            
             <Search />
             <h2 className="mb-4">New Arrivals</h2>
             <div className="row">
@@ -51,7 +54,8 @@ const Home = () => {
                 ))}
             </div>
 
-            <h2 className="mb-4">Best Sellers</h2>
+            <h2 className="mb-4import Footer from './footer';
+">Best Sellers</h2>
             <div className="row">
                 {productsBySell.map((product, i) => (
                     <div key={i} className="col-sm-12 col-lg-3   col-md-4">
@@ -59,8 +63,11 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+            <Footer/>
         </Layout>
     );
 };
+
+
 
 export default Home;
