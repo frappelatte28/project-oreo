@@ -1,0 +1,9 @@
+.icons{
+    display :flex;
+    justify-content: center;
+    
+}
+
+.icons  > svg {
+    margin-left:7px ;
+}

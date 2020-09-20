@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import style from './footer.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faFacebook, fafacebook, faLinkedinIn, faTwitter} from '@fortawesome/free-brands-svg-icons'
+
 
 class Footer extends Component {
   render() {
@@ -17,28 +21,21 @@ class Footer extends Component {
         <div className="section">
           <div class="secton1">
              <ul class="footer-nav">
-                <li><a href="#">Home</a></li>
+                <li class  = "links"><a href="#">Home</a></li>
                 <li><a href="#">cart</a></li>
             </ul>
           </div>
           <div class="section2">address</div>
           <div class="section3">about us</div>
         </div>
-        {/* <div className="icons">
-          <ul>
-            <li>
-              <i class="fa fa-linkedin"></i>
-            </li>
-            <li>
-              {" "}
-              <i class="fa fa-twitter"></i>
-            </li>
-            <li>
-              <i class="fa fa-instagram"></i>
-            </li>
-          </ul>
-        </div> */}
-        <p className="col-sm">
+        <div className={style.icons}>
+        
+          <FontAwesomeIcon icon={faFacebook} size="2x"/>
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
+          <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
+          
+        </div>
+        <p className="col-sm lisence">
           &copy;{new Date().getFullYear()} All rights reserved | Terms Of
           Service | Privacy
         </p>
@@ -46,5 +43,7 @@ class Footer extends Component {
     );
   }
 }
+
+// baby here is hthe thing about css scoping , ma
 
 export default Footer;
