@@ -54,6 +54,8 @@ const UpdateCategory = ( {match }) => {
             if (data.error) {
                 setValues({ ...values, error: data.error });
             } else {
+                // window.location = "http://localhost:3005/admin/category"
+                // <Redirect to="/admin/categories" />
                 setValues({
                     ...values,
                     name: data.name,
@@ -128,7 +130,7 @@ const UpdateCategory = ( {match }) => {
                     {showError()}
                     {updateCategoryForm()}
                     {goBackBTN()}
-                    {redirectUser()}
+                    {redirectToProfile? <Redirect to="/admin/category" /> : ''}
                 </div>
             </div>
         </Layout>
