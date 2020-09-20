@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.20.0",
     "braintree-web": "^3.45.0",
     "braintree-web-drop-in-react": "^1.0.7",
     "compression": "^1.7.4",

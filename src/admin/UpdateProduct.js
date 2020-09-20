@@ -72,6 +72,8 @@ const UpdateProduct = ({ match }) => {
     };
 
     useEffect(() => {
+        console.log(match)
+
         init(match.params.productId);
     }, []);
 

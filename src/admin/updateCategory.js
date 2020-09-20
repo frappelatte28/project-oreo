@@ -5,7 +5,9 @@ import { Link, Redirect } from 'react-router-dom';
 import { getCategory, updateCategory } from './apiAdmin';
 // {category: ["5cd0258f2793ec6e100bc191"], price: []}
 // http://localhost:3000/admin/category/update/5cd0258f2793ec6e100bc191
-const UpdateCategory = ({ match }) => {
+
+
+const UpdateCategory = ( {match }) => {
     const [values, setValues] = useState({
         name: '',
         error: '',
@@ -33,6 +35,7 @@ const UpdateCategory = ({ match }) => {
     };
 
     useEffect(() => {
+        console.log(match)
         init(match.params.categoryId);
     }, []);
 
@@ -46,6 +49,7 @@ const UpdateCategory = ({ match }) => {
         const category = {
             name: name
         };
+        console.log(category)
         updateCategory(match.params.categoryId, user._id, token, category).then(data => {
             if (data.error) {
                 setValues({ ...values, error: data.error });

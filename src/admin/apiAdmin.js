@@ -1,4 +1,5 @@
 import { API } from '../config';
+import axios from 'axios'
 
 export const createCategory = (userId, token, category) => {
     return fetch(`${API}/category/create/${userId}`, {
@@ -19,6 +20,7 @@ export const createCategory = (userId, token, category) => {
 };
 
 export const updateCategory = (categoryId, userId, token, category) => {
+    console.log(categoryId, userId, token, category)
     return fetch(`${API}/category/${categoryId}/${userId}`, {
         method: 'PUT',
         headers: {
@@ -52,7 +54,7 @@ export const createProduct = (userId, token, product) => {
         });
 };
 
-export const getCategory = categoryId => {
+export const  getCategory = categoryId => {
     return fetch(`${API}/category/${categoryId}`, {
         method: 'GET'
     })
@@ -62,14 +64,13 @@ export const getCategory = categoryId => {
         .catch(err => console.log(err));
 };
 
-export const getCategories = () => {
-    return fetch(`${API}/categories`, {
-        method: 'GET'
+export const  getCategories = () => {
+
+    return axios.get(`${API}/categories`).then((res)=>{
+        return res.data
     })
-        .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+ 
+
 };
 
 export const listOrders = (userId, token) => {
@@ -173,3 +174,4 @@ export const updateProduct = (productId, userId, token, product) => {
         })
         .catch(err => console.log(err));
 };
+
